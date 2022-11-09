@@ -31,6 +31,8 @@ for (let i = 0; i < images.length; i++) {
     const item = `
     <div class="item">
         <img src="${element.image}" alt="">
+        <h2>${element.title}</h2>
+        <p>${element.text}</p>
     </div>
     `;
     items.innerHTML += item
