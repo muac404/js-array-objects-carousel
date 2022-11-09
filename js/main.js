@@ -31,11 +31,40 @@ for (let i = 0; i < images.length; i++) {
     const item = `
     <div class="item">
         <img src="${element.image}" alt="">
-        <h2>${element.title}</h2>
-        <p>${element.text}</p>
+        <div class="img-text">
+        <h2 class="title">${element.title}</h2>
+        <p class="caption">${element.text}</p>
     </div>
     `;
     items.innerHTML += item
     console.log(element.image)
 
 }
+
+document.querySelector(".item").classList.add("active")
+
+
+const prevBtn = document.getElementById("prev");
+prevBtn.addEventListener("click", function(){
+    const itemActive = document.querySelector(".item.active")
+    const nextItem = itemActive.nextElementSibling
+    itemActive.classList.remove("active")
+    if ( nextItem !== null) {
+        nextItem.classList.add("active")
+    } else {
+        document.querySelector(".item").classList.add("active")
+    }
+    
+})
+const nextBtn = document.getElementById("next");
+nextBtn.addEventListener("click", function(){
+    const itemActive = document.querySelector(".item.active")
+    const nextItem = itemActive.nextElementSibling
+    itemActive.classList.remove("active")
+    if ( nextItem !== null) {
+        nextItem.classList.add("active")
+    } else {
+        document.querySelector(".item").classList.add("active")
+    }
+    
+})
